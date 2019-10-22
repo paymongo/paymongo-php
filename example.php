@@ -81,4 +81,4 @@ require 'init.php';
 // echo '</br>';
 // var_dump($paymentObject);
 
-var_dump(\Paymongo\Payment::list());
+var_dump(\Paymongo\Payment::index());
