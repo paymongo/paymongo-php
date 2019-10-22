@@ -1,0 +1,3 @@
+Add logger for monitoring
+Improve exception
+Add option to customize HTTPclient header

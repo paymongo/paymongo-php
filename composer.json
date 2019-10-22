@@ -1,0 +1,12 @@
+{
+  "name": "paymongo/paymongo-php",
+  "description": "Paymongo PHP Library",
+  "require": {
+    "php": ">=5.6.0",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+  }
+}

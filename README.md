@@ -1,1 +1,0 @@
-# Paymongo PHP SDK
