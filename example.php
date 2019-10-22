@@ -4,7 +4,7 @@
 //require '/pathtopaymongo/init.php'
 require 'init.php';
   
-\Paymongo\Paymongo::setApiKey('sk_test_KxoWHHv6WcUJchgbZD9AgsyT');
+\Paymongo\Paymongo::setApiKey('sk_test_....');
 
 // try {
 //     $tokenObject = \Paymongo\Token::create(
