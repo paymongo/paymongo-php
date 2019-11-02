@@ -7,10 +7,10 @@ require $paymongoSrcDirectory . '/Paymongo.php';
 //HTTPClient
 require $paymongoSrcDirectory . '/HttpClient.php';
 
-//Traits
-require $paymongoSrcDirectory . '/Trait/Create.php';
-require $paymongoSrcDirectory . '/Trait/Get.php';
-require $paymongoSrcDirectory . '/Trait/Index.php';
+//API Methods
+require $paymongoSrcDirectory . '/ApiMethods/Create.php';
+require $paymongoSrcDirectory . '/ApiMethods/Get.php';
+require $paymongoSrcDirectory . '/ApiMethods/Index.php';
 
 //Objects
 require $paymongoSrcDirectory . '/Token.php';

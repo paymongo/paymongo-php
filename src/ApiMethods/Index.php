@@ -1,6 +1,6 @@
 <?php
 
-namespace Paymongo\Object;
+namespace Paymongo\ApiMethods;
 
 use \Paymongo\HttpClient;
 use \Paymongo\Paymongo;

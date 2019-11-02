@@ -10,14 +10,8 @@ use Paymongo\HttpClient;
  
 class Token {
     
-    use Object\Create;
-    use Object\Get;
+    use ApiMethods\Create;
+    use ApiMethods\Get;
 
     const PATH = 'tokens';
- 
-    // public function get($id)
-    // {
-    //     $result = HttpClient::request('GET', Paymongo::getApiUrl() . 'tokens' . '/' . urlencode($id) , '', '');
-    //     return (object) $result['data'];
-    // }
 }

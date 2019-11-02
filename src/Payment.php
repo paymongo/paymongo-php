@@ -10,9 +10,9 @@ use Paymongo\HttpClient;
  
 class Payment {
     
-    use Object\Create;
-    use Object\Get;
-    use Object\Index;
+    use ApiMethods\Create;
+    use ApiMethods\Get;
+    use ApiMethods\Index;
 
     const PATH = 'payments';
 }
