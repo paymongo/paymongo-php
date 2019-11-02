@@ -4,16 +4,16 @@ namespace Paymongo\Exception;
 
 class ApiException extends \Exception {
     
-    public static $jsonBody;
+    public $jsonBody;
 
-    public function factory($message, $jsonBody) {
+    public static function factory($message, $jsonBody) {
         $message .= ' ' . self::digestApiError($jsonBody);
         $instance = new static($message);
         $instance->jsonBody = $jsonBody;
         return $instance;
     }
     
-    public function digestApiError($jsonBody)
+    public static function digestApiError($jsonBody)
     {
         $body = json_decode($jsonBody, true);
         $apiErrorMessage = '';

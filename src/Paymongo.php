@@ -27,7 +27,7 @@ class Paymongo {
         self::$secretKey = $secretKey;
     }
 
-    public function getApiUrl()
+    public static function getApiUrl()
     {
         return self::$apiBaseUrl . self::$apiVersion . '/';
     }

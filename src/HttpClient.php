@@ -13,7 +13,7 @@ class HttpClient {
         return self::$instance;
     }
 
-    public function request($method, $url, $headers, $params)
+    public static function request($method, $url, $headers, $params)
     {
         $data = [
             'data' => [
@@ -47,7 +47,7 @@ class HttpClient {
         return json_decode($body, true);
     }
 
-    public function handleErrorResponse($body, $code)
+    public static function handleErrorResponse($body, $code)
     {
         $exception = null;
         switch ($code) {

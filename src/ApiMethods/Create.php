@@ -7,7 +7,7 @@ use \Paymongo\Paymongo;
 
 trait Create {
     
-    public function create(array $params) {
+    public static function create(array $params) {
         $result = HttpClient::request('POST', Paymongo::getApiUrl() . static::PATH, '', $params);
         return (object) $result['data'];
     }

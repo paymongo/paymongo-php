@@ -7,7 +7,7 @@ use \Paymongo\Paymongo;
 
 trait Index {
     
-    public function index()
+    public static function index()
     {
         $result = HttpClient::request('GET', Paymongo::getApiUrl() . static::PATH, '', '');
         $collection = [];
