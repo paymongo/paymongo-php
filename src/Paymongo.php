@@ -1,13 +1,14 @@
 <?php
  
 namespace Paymongo;
- 
+
 /**
  * Class Paymongo
- * 
+ *
  * @package Paymongo
  */
-class Paymongo {
+class Paymongo
+{
  
     // @var string Paymongo secret key used for authenticating and performing payment transactions
     public static $secretKey;

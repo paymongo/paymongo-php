@@ -3,13 +3,13 @@
 namespace Paymongo;
 
 use Paymongo\HttpClient;
- 
+
 /**
  * Class Token
  */
  
-class Payment {
-    
+class Payment
+{
     use ApiMethods\Create;
     use ApiMethods\Get;
     use ApiMethods\Index;

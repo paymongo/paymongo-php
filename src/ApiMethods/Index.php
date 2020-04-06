@@ -5,13 +5,13 @@ namespace Paymongo\ApiMethods;
 use \Paymongo\HttpClient;
 use \Paymongo\Paymongo;
 
-trait Index {
-    
+trait Index
+{
     public static function index()
     {
         $result = HttpClient::request('GET', Paymongo::getApiUrl() . static::PATH, '', '');
         $collection = [];
-        foreach($result['data'] as $record) {
+        foreach ($result['data'] as $record) {
             $collection[] = (object) $record;
         }
         return $collection;

@@ -5,11 +5,11 @@ namespace Paymongo\ApiMethods;
 use \Paymongo\HttpClient;
 use \Paymongo\Paymongo;
 
-trait Get {
-    
+trait Get
+{
     public static function get($id)
     {
-        $result = HttpClient::request('GET', Paymongo::getApiUrl() . static::PATH . '/' . urlencode($id) , '', '');
+        $result = HttpClient::request('GET', Paymongo::getApiUrl() . static::PATH . '/' . urlencode($id), '', '');
         return (object) $result['data'];
     }
 }
