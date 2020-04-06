@@ -1,15 +1,15 @@
 <?php
 
-namespace Paymongo\ApiMethods;
+namespace PayMongo\ApiMethods;
 
-use \Paymongo\HttpClient;
-use \Paymongo\Paymongo;
+use \PayMongo\HttpClient;
+use \PayMongo\PayMongo;
 
 trait Create
 {
     public static function create(array $params)
     {
-        $result = HttpClient::request('POST', Paymongo::getApiUrl() . static::PATH, '', $params);
+        $result = HttpClient::request('POST', PayMongo::getApiUrl() . static::PATH, '', $params);
         return (object) $result['data'];
     }
 }

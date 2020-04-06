@@ -1,15 +1,15 @@
 <?php
 
-namespace Paymongo\ApiMethods;
+namespace PayMongo\ApiMethods;
 
-use \Paymongo\HttpClient;
-use \Paymongo\Paymongo;
+use \PayMongo\HttpClient;
+use \PayMongo\PayMongo;
 
 trait Index
 {
     public static function index()
     {
-        $result = HttpClient::request('GET', Paymongo::getApiUrl() . static::PATH, '', '');
+        $result = HttpClient::request('GET', PayMongo::getApiUrl() . static::PATH, '', '');
         $collection = [];
         foreach ($result['data'] as $record) {
             $collection[] = (object) $record;

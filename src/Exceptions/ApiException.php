@@ -1,6 +1,6 @@
 <?php
 
-namespace Paymongo\Exception;
+namespace PayMongo\Exceptions;
 
 class ApiException extends \Exception
 {

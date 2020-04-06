@@ -1,6 +1,6 @@
 <?php
 
-namespace Paymongo;
+namespace PayMongo;
 
 class HttpClient
 {
@@ -33,7 +33,7 @@ class HttpClient
             CURLOPT_HTTPHEADER,
             array(
                 'Content-Type:application/json',
-                'Authorization: Basic '. base64_encode(Paymongo::$secretKey . ':'),
+                'Authorization: Basic '. base64_encode(PayMongo::$secretKey . ':'),
             )
         );
         curl_setopt($ch, CURLOPT_VERBOSE, false);

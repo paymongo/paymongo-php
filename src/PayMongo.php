@@ -1,19 +1,19 @@
 <?php
  
-namespace Paymongo;
+namespace PayMongo;
 
 /**
- * Class Paymongo
+ * Class PayMongo
  *
- * @package Paymongo
+ * @package PayMongo
  */
-class Paymongo
+class PayMongo
 {
  
-    // @var string Paymongo secret key used for authenticating and performing payment transactions
+    // @var string PayMongo secret key used for authenticating and performing payment transactions
     public static $secretKey;
  
-    // @var string Paymongo API Base Url
+    // @var string PayMongo API Base Url
     public static $apiBaseUrl = 'https://api.paymongo.com/';
  
     public static $apiVersion = 'v1';

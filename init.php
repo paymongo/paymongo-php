@@ -2,7 +2,7 @@
 
 $paymongoSrcDirectory = dirname(__FILE__) . '/src';
 
-require $paymongoSrcDirectory . '/Paymongo.php';
+require $paymongoSrcDirectory . '/PayMongo.php';
 
 //HTTPClient
 require $paymongoSrcDirectory . '/HttpClient.php';

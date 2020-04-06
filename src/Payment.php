@@ -1,8 +1,8 @@
 <?php
  
-namespace Paymongo;
+namespace PayMongo;
 
-use Paymongo\HttpClient;
+use PayMongo\HttpClient;
 
 /**
  * Class Token
