@@ -16,6 +16,7 @@ class ApiException extends Exception
         if (!empty($attribute)) {
             if (!empty($this->jsonBody)) {
                 $errors = $this->errors();
+                
                 return array_filter($errors, function ($error) use ($attribute) {
                     return ($error->hasSource() && $error->source->attribute == $attribute);
                 });
@@ -23,11 +24,13 @@ class ApiException extends Exception
         } else {
             if (!empty($this->jsonBody)) {
                 $errors = json_decode($this->jsonBody, true)['errors'];
+                
                 return array_map(function ($error) {
                     return new Error($error);
                 }, $errors);
             }
         }
+
         return [];
     }
 
@@ -36,6 +39,7 @@ class ApiException extends Exception
         $message .= ' ' . self::digestApiError($jsonBody);
         $instance = new static($message);
         $instance->jsonBody = $jsonBody;
+        
         return $instance;
     }
     
@@ -43,9 +47,11 @@ class ApiException extends Exception
     {
         $body = json_decode($jsonBody, true);
         $apiErrorMessage = '';
+        
         foreach ($body['errors'] as $error) {
             $apiErrorMessage .= $error['meta']['type'] . ': ' . $error['code'] . ' - ' . $error['detail'];
         }
+        
         return $apiErrorMessage;
     }
 }

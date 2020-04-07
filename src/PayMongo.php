@@ -13,7 +13,7 @@ class PayMongo
 {
  
     // @var string PayMongo secret key used for authenticating and performing payment transactions
-    public static $secretKey;
+    public static $apiKey;
  
     // @var string PayMongo API Base Url
     public static $apiBaseUrl = 'https://api.paymongo.com/';
@@ -23,14 +23,14 @@ class PayMongo
     /**
      * Sets the secret API key to be used for requests.
      *
-     * @param string $secretKey
+     * @param string $apiKey
      */
-    public static function setApiKey($secretKey)
+    public static function setApiKey($apiKey)
     {
-        if (strtolower(substr($secretKey, 0, 2)) === 'pk') {
+        if (strtolower(substr($apiKey, 0, 2)) === 'pk') {
             throw new PublicKeyException;
         }
-        self::$secretKey = $secretKey;
+        self::$apiKey = $apiKey;
     }
 
     public static function getApiUrl()

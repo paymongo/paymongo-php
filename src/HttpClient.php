@@ -11,6 +11,7 @@ class HttpClient
         if (!self::$instance) {
             self::$instance = new self();
         }
+
         return self::$instance;
     }
 
@@ -33,7 +34,7 @@ class HttpClient
             CURLOPT_HTTPHEADER,
             array(
                 'Content-Type:application/json',
-                'Authorization: Basic '. base64_encode(PayMongo::$secretKey . ':'),
+                'Authorization: Basic '. base64_encode(PayMongo::$apiKey . ':'),
             )
         );
         curl_setopt($ch, CURLOPT_VERBOSE, false);
@@ -49,6 +50,7 @@ class HttpClient
         
         $body = curl_exec($ch);
         $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        
         if ($code < 200 || $code >= 400) {
             self::handleErrorResponse($body, $code);
         }

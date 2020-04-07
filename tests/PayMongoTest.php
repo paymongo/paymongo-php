@@ -1,7 +1,8 @@
 <?php
-use PHPUnit\Framework\TestCase;
-use PayMongo\PayMongo;
+
 use PayMongo\Exceptions\PublicKeyException;
+use PayMongo\PayMongo;
+use PHPUnit\Framework\TestCase;
 
 final class PayMongoTest extends TestCase
 {
@@ -11,7 +12,7 @@ final class PayMongoTest extends TestCase
         
         $this->assertEquals(
             'sk_test_asdfasdfasdf',
-            PayMongo::$secretKey
+            PayMongo::$apiKey
         );
     }
 

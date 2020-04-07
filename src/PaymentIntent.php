@@ -22,6 +22,7 @@ class PaymentIntent extends PayMongoEntity
         if (isset($params['amount']) && is_numeric($params['amount'])) {
             $params['amount'] = $params['amount']*100;
         }
+        
         return self::apiMethodCreate($params);
     }
 }

@@ -10,6 +10,7 @@ trait Create
     public static function create(array $params)
     {
         $result = HttpClient::request('POST', PayMongo::getApiUrl() . static::PATH, '', $params);
+        
         return new SELF($result['data']);
     }
 }
