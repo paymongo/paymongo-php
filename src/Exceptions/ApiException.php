@@ -13,16 +13,14 @@ class ApiException extends Exception
 
     public function errors($attribute='')
     {
-        if (!empty($attribute)) {
-            if (!empty($this->jsonBody)) {
+        if (!empty($this->jsonBody)) {
+            if (!empty($attribute)) {
                 $errors = $this->errors();
                 
                 return array_filter($errors, function ($error) use ($attribute) {
                     return ($error->hasSource() && $error->source->attribute == $attribute);
                 });
-            }
-        } else {
-            if (!empty($this->jsonBody)) {
+            } else {
                 $errors = json_decode($this->jsonBody, true)['errors'];
                 
                 return array_map(function ($error) {
@@ -47,7 +45,7 @@ class ApiException extends Exception
     {
         $body = json_decode($jsonBody, true);
         $apiErrorMessage = '';
-        
+
         foreach ($body['errors'] as $error) {
             $apiErrorMessage .= $error['meta']['type'] . ': ' . $error['code'] . ' - ' . $error['detail'];
         }
