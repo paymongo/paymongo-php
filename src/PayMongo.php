@@ -2,6 +2,8 @@
  
 namespace PayMongo;
 
+use PayMongo\Exceptions\PublicKeyException;
+
 /**
  * Class PayMongo
  *
@@ -25,6 +27,9 @@ class PayMongo
      */
     public static function setApiKey($secretKey)
     {
+        if (strtolower(substr($secretKey, 0, 2)) === 'pk') {
+            throw new PublicKeyException;
+        }
         self::$secretKey = $secretKey;
     }
 

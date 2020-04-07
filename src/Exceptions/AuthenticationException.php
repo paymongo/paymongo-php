@@ -2,6 +2,6 @@
 
 namespace PayMongo\Exceptions;
 
-class AuthenticationException extends ApiException
+class AuthenticationException extends Exception
 {
 }

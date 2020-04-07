@@ -2,9 +2,34 @@
 
 namespace PayMongo\Exceptions;
 
-class ApiException extends \Exception
+class ApiException extends Exception
 {
     public $jsonBody;
+
+    public function __construct($jsonBody)
+    {
+        $this->jsonBody = $jsonBody;
+    }
+
+    public function errors($attribute='')
+    {
+        if (!empty($attribute)) {
+            if (!empty($this->jsonBody)) {
+                $errors = $this->errors();
+                return array_filter($errors, function ($error) use ($attribute) {
+                    return ($error->hasSource() && $error->source->attribute == $attribute);
+                });
+            }
+        } else {
+            if (!empty($this->jsonBody)) {
+                $errors = json_decode($this->jsonBody, true)['errors'];
+                return array_map(function ($error) {
+                    return new Error($error);
+                }, $errors);
+            }
+        }
+        return [];
+    }
 
     public static function factory($message, $jsonBody)
     {

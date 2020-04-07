@@ -1,5 +1,5 @@
 <?php
- 
+
 namespace PayMongo;
 
 use PayMongo\HttpClient;
@@ -7,16 +7,15 @@ use PayMongo\HttpClient;
 /**
  * Class Token
  */
- 
-class Payment extends PayMongoEntity
+
+class PaymentIntent extends PayMongoEntity
 {
     use ApiMethods\Create {
         create as apiMethodCreate;
     }
     use ApiMethods\Get;
-    use ApiMethods\Index;
 
-    const PATH = 'payments';
+    const PATH = 'payment_intents';
 
     public static function create(array $params)
     {

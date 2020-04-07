@@ -45,11 +45,10 @@ class HttpClient
         }
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         
         $body = curl_exec($ch);
         $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        
         if ($code < 200 || $code >= 400) {
             self::handleErrorResponse($body, $code);
         }
@@ -64,10 +63,13 @@ class HttpClient
         $exception = null;
         switch ($code) {
             case '401':
-                $exception = Exception\AuthenticationException::factory("You provided an api key that doesn't exist, you can go to developer section on your dashboard to get valid API key. ", $body);
+                $exception = Exceptions\AuthenticationException::factory("You provided an api key that doesn't exist, you can go to developer section on your dashboard to get valid API key. ", $body);
+                break;
+            case '400':
+                $exception = new Exceptions\InvalidRequestException($body);
                 break;
             default:
-                $exception = Exception\ApiException::factory('', $body);
+                $exception = Exceptions\ApiException::factory('', $body);
                 break;
         }
         throw $exception;

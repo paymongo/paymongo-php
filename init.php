@@ -13,9 +13,15 @@ require $paymongoSrcDirectory . '/ApiMethods/Get.php';
 require $paymongoSrcDirectory . '/ApiMethods/Index.php';
 
 //Objects
-require $paymongoSrcDirectory . '/Token.php';
+require $paymongoSrcDirectory . '/PayMongoEntity.php';
 require $paymongoSrcDirectory . '/Payment.php';
+require $paymongoSrcDirectory . '/PaymentIntent.php';
+require $paymongoSrcDirectory . '/Token.php';
 
 //Exceptions
-require $paymongoSrcDirectory . '/Exception/ApiException.php';
-require $paymongoSrcDirectory . '/Exception/AuthenticationException.php';
+require $paymongoSrcDirectory . '/Exceptions/Exception.php';
+require $paymongoSrcDirectory . '/Exceptions/Error.php';
+require $paymongoSrcDirectory . '/Exceptions/ApiException.php';
+require $paymongoSrcDirectory . '/Exceptions/AuthenticationException.php';
+require $paymongoSrcDirectory . '/Exceptions/InvalidRequestException.php';
+require $paymongoSrcDirectory . '/Exceptions/PublicKeyException.php';
