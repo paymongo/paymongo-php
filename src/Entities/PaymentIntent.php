@@ -16,6 +16,7 @@ class PaymentIntent extends \Paymongo\Entities\BaseEntity
         $this->description = $attributes['description'];
         $this->livemode = $attributes['livemode'];
         $this->last_payment_error = $attributes['last_payment_error'];
+        $this->origin = $attributes['origin'];
         $this->statement_descriptor = $attributes['statement_descriptor'];
         $this->status = $attributes['status'];
         $this->payment_method_allowed = $attributes['payment_method_allowed'];

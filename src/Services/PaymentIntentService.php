@@ -42,4 +42,16 @@ class PaymentIntentService extends \Paymongo\Services\BaseService {
 
         return new \Paymongo\Entities\PaymentIntent($apiResource);
     }
+
+    public function attach($id, $params) {
+      $params['origin'] = 'php';
+
+      $apiResponse = $this->httpClient->request([
+          'method' => 'POST',
+          'url'    => "{$this->client->apiBaseUrl}/{$this->client->apiVersion}/" . self::URI . "/{$id}/attach",
+          'params' => $params
+      ]);
+
+      return new \Paymongo\Entities\PaymentIntent($apiResource);
+  }
 }
